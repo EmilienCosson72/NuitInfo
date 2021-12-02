@@ -23,7 +23,7 @@ CREATE TABLE BATEAU_SECOURU_CONTRIBUTION(
    Dimension_Bateau VARCHAR(25) NOT NULL,
    Desc_Bateau VARCHAR(5000),
    Est_Refuse BOOLEAN NOT NULL,
-   Id_User VARCHAR(50) NOT NULL,
+   Id_User INT NOT NULL,
    PRIMARY KEY(Id_Bateau),
    FOREIGN KEY(Id_User) REFERENCES UTILISATEUR(Id_User)
 );
@@ -36,7 +36,7 @@ CREATE TABLE VICTIME_CONTRIBUTION(
    Date_Naissance_Vict VARCHAR(50),
    Sexe_Vict VARCHAR(1),
    Est_Refuse BOOLEAN NOT NULL,
-   Id_User VARCHAR(50) NOT NULL,
+   Id_User INT NOT NULL,
    PRIMARY KEY(Id_Vict),
    FOREIGN KEY(Id_User) REFERENCES UTILISATEUR(Id_User)
 );
@@ -47,7 +47,7 @@ CREATE TABLE INCIDENT_CONTRIBUTION(
    Localisation_Incident VARCHAR(50) NOT NULL,
    Desc_Incident VARCHAR(5000),
    Est_Refuse BOOLEAN NOT NULL,
-   Id_User VARCHAR(50) NOT NULL,
+   Id_User INT NOT NULL,
    PRIMARY KEY(Id_Incident),
    FOREIGN KEY(Id_User) REFERENCES UTILISATEUR(Id_User)
 );
@@ -60,7 +60,7 @@ CREATE TABLE SAUVETEUR_CONTRIBUTION(
    Date_Naissance_Sauv DATE,
    Sexe_Sauv VARCHAR(1),
    Est_Refuse BOOLEAN NOT NULL,
-   Id_User VARCHAR(50) NOT NULL,
+   Id_User INT NOT NULL,
    PRIMARY KEY(Id_Sauv),
    FOREIGN KEY(Id_User) REFERENCES UTILISATEUR(Id_User)
 );
@@ -70,7 +70,7 @@ CREATE TABLE BATEAU_SAUVETEUR(
    Nom_Bateau VARCHAR(50) NOT NULL,
    Dimension_Bateau VARCHAR(25) NOT NULL,
    Desc_Bateau VARCHAR(5000),
-   Id_User VARCHAR(50) NOT NULL,
+   Id_User INT NOT NULL,
    PRIMARY KEY(Id_Bateau),
    FOREIGN KEY(Id_User) REFERENCES UTILISATEUR(Id_User)
 );
@@ -81,7 +81,7 @@ CREATE TABLE BATEAU_SAUVETEUR_CONTRIBUTION(
    Dimension_Bateau VARCHAR(25) NOT NULL,
    Desc_Bateau VARCHAR(5000),
    Est_Refuse BOOLEAN NOT NULL,
-   Id_User VARCHAR(50) NOT NULL,
+   Id_User INT NOT NULL,
    PRIMARY KEY(Id_Bateau),
    FOREIGN KEY(Id_User) REFERENCES UTILISATEUR(Id_User)
 );
@@ -93,7 +93,7 @@ CREATE TABLE SAUVETEUR(
    Ville_Sauv VARCHAR(50),
    Date_Naissance_Sauv DATE,
    Sexe_Sauv VARCHAR(1),
-   Id_User VARCHAR(50) NOT NULL,
+   Id_User INT NOT NULL,
    PRIMARY KEY(Id_Sauv),
    FOREIGN KEY(Id_User) REFERENCES UTILISATEUR(Id_User)
 );
@@ -103,7 +103,7 @@ CREATE TABLE INCIDENT(
    Date_Incident DATETIME NOT NULL,
    Localisation_Incident VARCHAR(50) NOT NULL,
    Desc_Incident VARCHAR(5000),
-   Id_User VARCHAR(50) NOT NULL,
+   Id_User INT NOT NULL,
    PRIMARY KEY(Id_Incident),
    FOREIGN KEY(Id_User) REFERENCES UTILISATEUR(Id_User)
 );
@@ -115,7 +115,7 @@ CREATE TABLE VICTIME(
    Ville_Vict VARCHAR(50),
    Date_Naissance_Vict VARCHAR(50),
    Sexe_Vict VARCHAR(1),
-   Id_User VARCHAR(50) NOT NULL,
+   Id_User INT NOT NULL,
    PRIMARY KEY(Id_Vict),
    FOREIGN KEY(Id_User) REFERENCES UTILISATEUR(Id_User)
 );
@@ -125,7 +125,7 @@ CREATE TABLE BATEAU_SECOURU(
    Nom_Bateau VARCHAR(50) NOT NULL,
    Dimension_Bateau VARCHAR(25) NOT NULL,
    Desc_Bateau VARCHAR(5000),
-   Id_User VARCHAR(50) NOT NULL,
+   Id_User INT NOT NULL,
    PRIMARY KEY(Id_Bateau),
    FOREIGN KEY(Id_User) REFERENCES UTILISATEUR(Id_User)
 );
@@ -135,40 +135,40 @@ CREATE TABLE ARTICLE(
    Contenu_Article VARCHAR(50) NOT NULL,
    Desc_Article VARCHAR(50) NOT NULL,
    Date_Article DATETIME NOT NULL,
-   Id_Categorie VARCHAR(50) NOT NULL,
-   Id_User VARCHAR(50) NOT NULL,
+   Id_Categorie INT NOT NULL,
+   Id_User INT NOT NULL,
    PRIMARY KEY(Id_Article),
    FOREIGN KEY(Id_Categorie) REFERENCES CATEGORIE(Id_Categorie),
    FOREIGN KEY(Id_User) REFERENCES UTILISATEUR(Id_User)
 );
 
 CREATE TABLE INTERVENTION(
-   Id_Sauv INT AUTO_INCREMENT,
-   Id_Incident VARCHAR(50),
+   Id_Sauv INT,
+   Id_Incident INT,
    PRIMARY KEY(Id_Sauv, Id_Incident),
    FOREIGN KEY(Id_Sauv) REFERENCES SAUVETEUR(Id_Sauv),
    FOREIGN KEY(Id_Incident) REFERENCES INCIDENT(Id_Incident)
 );
 
 CREATE TABLE DEGAT(
-   Id_Incident INT AUTO_INCREMENT,
-   Id_Vict VARCHAR(50),
+   Id_Incident INT,
+   Id_Vict INT,
    PRIMARY KEY(Id_Incident, Id_Vict),
    FOREIGN KEY(Id_Incident) REFERENCES INCIDENT(Id_Incident),
    FOREIGN KEY(Id_Vict) REFERENCES VICTIME(Id_Vict)
 );
 
 CREATE TABLE NAVIGUATION(
-   Id_Incident INT AUTO_INCREMENT,
-   Id_Bateau VARCHAR(50),
+   Id_Incident INT,
+   Id_Bateau INT,
    PRIMARY KEY(Id_Incident, Id_Bateau),
    FOREIGN KEY(Id_Incident) REFERENCES INCIDENT(Id_Incident),
    FOREIGN KEY(Id_Bateau) REFERENCES BATEAU_SECOURU(Id_Bateau)
 );
 
 CREATE TABLE SECOURS(
-   Id_Incident INT AUTO_INCREMENT,
-   Id_Bateau INT AUTO_INCREMENT,
+   Id_Incident INT,
+   Id_Bateau INT,
    PRIMARY KEY(Id_Incident, Id_Bateau),
    FOREIGN KEY(Id_Incident) REFERENCES INCIDENT(Id_Incident),
    FOREIGN KEY(Id_Bateau) REFERENCES BATEAU_SAUVETEUR(Id_Bateau)
