@@ -14,8 +14,8 @@ INSERT INTO VICTIME_CONTRIBUTION (`Nom_Vict`, `Prenom_Vict`, `Ville_Vict`, `Date
 INSERT INTO SAUVETEUR (`Nom_Sauv`, `Prenom_Sauv`, `Ville_Sauv`, `Date_Naissance_Sauv`, `Sexe_Sauv`, `Id_User`) VALUES ("EZFDSF", "Michel", "Bréal Sous Vitré", "18-02-1964", "H", "1"),
 ("KJFDSF", "Michelle", "Rennes", "15-09-1964", "F", "3"), ("PPOUI", "Gilles", "Argentré Du Plessis", "30-11-1989", "H", "3");
 
-INSERT INTO SAUVETEUR_CONTRIBUTION (`Nom_Sauv`, `Prenom_Sauv`, `Ville_Sauv`, `Date_Naissance_Sauv`, `Sexe_Sauv`, `Id_User`) VALUES ("EZFDSF", "Michel", "Bréal Sous Vitré", "18-02-1964", "H", "1", false, "2"),
-("KJFDSF", "Michelle", "Rennes", "15-09-1964", "F", "3", true, "1"), ("PPOUI", "Gilles", "Argentré Du Plessis", "30-11-1989", "H", "3", true, "1");
+INSERT INTO SAUVETEUR_CONTRIBUTION (`Nom_Sauv`, `Prenom_Sauv`, `Ville_Sauv`, `Date_Naissance_Sauv`, `Sexe_Sauv`, `Est_Refuse`, `Id_User`) VALUES ("EZFDSF", "Michel", "Bréal Sous Vitré", "18-02-1964", "H", false, "2"),
+("KJFDSF", "Michelle", "Rennes", "15-09-1964", "F", true, "1"), ("PPOUI", "Gilles", "Argentré Du Plessis", "30-11-1989", "H", true, "1");
 
 INSERT INTO INCIDENT (`Date_Incident`, `Localisation_Incident`, `Desc_Incident`, `Id_User`) VALUES ("01-12-2021", "51°05&apos;24.9&quot;N 2°18&apos;58.8&quot;E", "Description de l'incident", "1"),
 ("28-10-2021", "51°05&apos;24.9&quot;N 2°18&apos;58.8&quot;E", "Description de l'incident n°2", "3"), ("21-06-2021", "51°05&apos;24.9&quot;N 2°18&apos;58.8&quot;E", "Description de l'incident n°3", "1");
