@@ -3,11 +3,11 @@
 INSERT INTO UTILISATEUR (`Email_User`, `Password_User`, `Nom_Role`, `Pseudo_User`) VALUES ("gsgsfdgfd@gmail.com", "fdsfdgfdg", "Utilisateur", "User1"),
                                 ("nvjkdazerx@gmail.com", "azeerdg", "Visiteur", "User2"), ("lkjjkhj@gmail.com", "fdsggfd", "Administrateur", "User3");
 
-INSERT INTO VICTIME (`Nom_Vict`, `Prenom_Vict`, `Ville_Vict`, `Date_Naissance_Vict`, `Sexe_Vict`) VALUES ("DUPONT", "Jacky", "Louvigné de Bais", "21-05-1996", "H", "1"),
+INSERT INTO VICTIME (`Nom_Vict`, `Prenom_Vict`, `Ville_Vict`, `Date_Naissance_Vict`, `Sexe_Vict`, `Id_User`) VALUES ("DUPONT", "Jacky", "Louvigné de Bais", "21-05-1996", "H", "1"),
 ("DUPONS", "Thierry", "Bais", "25-10-1982", "H", "3"),
 ("DUPOND", "Denise", "Louvigné de Bais", "12-11-1943", "F", "2");
 
-INSERT INTO VICTIME_CONTRIBUTION (`Nom_Vict`, `Prenom_Vict`, `Ville_Vict`, `Date_Naissance_Vict`, `Sexe_Vict`, `Est_Refuse`) VALUES ("DUPONT", "Jacky", "Louvigné de Bais", "21-05-1996", "H", false, "2"),
+INSERT INTO VICTIME_CONTRIBUTION (`Nom_Vict`, `Prenom_Vict`, `Ville_Vict`, `Date_Naissance_Vict`, `Sexe_Vict`, `Est_Refuse`, `Id_User`) VALUES ("DUPONT", "Jacky", "Louvigné de Bais", "21-05-1996", "H", false, "2"),
 ("DUPONS", "Thierry", "Bais", "25-10-1982", "H", true, "2"),
 ("DUPOND", "Denise", "Louvigné de Bais", "12-11-1943", "F", true, "1");
 
