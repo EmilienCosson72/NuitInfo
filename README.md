@@ -28,7 +28,9 @@ Nous avons donc créé une base de donnée et intégré les données de celles-c
 //TODO Lucas
 ### Importer SQL
 Nous avons deux fichiers de scripts SQL à exécuter dans l'ordre :
-1) d
-2) d
+1) bdd_sauveteurs_en_mer.sql
+2) insertions_donnees.sql 
+
+Si le premier fichier se charge de créer la base de donnée et les tables, la seconde se contente d'insérer quelques données à titre d'exemple.
 ## Contributeurs
 Vive la contribution !
