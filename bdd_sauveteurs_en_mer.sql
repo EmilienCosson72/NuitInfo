@@ -44,7 +44,7 @@ CREATE TABLE VICTIME_CONTRIBUTION(
 
 CREATE TABLE INCIDENT_CONTRIBUTION(
    Id_Incident INT AUTO_INCREMENT,
-   Date_Incident DATETIME NOT NULL,
+   Date_Incident VARCHAR(25) NOT NULL,
    Localisation_Incident VARCHAR(50) NOT NULL,
    Desc_Incident VARCHAR(5000),
    Est_Refuse BOOLEAN NOT NULL,
@@ -58,7 +58,7 @@ CREATE TABLE SAUVETEUR_CONTRIBUTION(
    Nom_Sauv VARCHAR(50) NOT NULL,
    Prenom_Sauv VARCHAR(50) NOT NULL,
    Ville_Sauv VARCHAR(50),
-   Date_Naissance_Sauv DATE,
+   Date_Naissance_Sauv VARCHAR(25),
    Sexe_Sauv VARCHAR(1),
    Est_Refuse BOOLEAN NOT NULL,
    Id_User INT NOT NULL,
@@ -94,7 +94,7 @@ CREATE TABLE SAUVETEUR(
    Nom_Sauv VARCHAR(50) NOT NULL,
    Prenom_Sauv VARCHAR(50) NOT NULL,
    Ville_Sauv VARCHAR(50),
-   Date_Naissance_Sauv DATE,
+   Date_Naissance_Sauv VARCHAR(25),
    Sexe_Sauv VARCHAR(1),
    Id_User INT NOT NULL,
    PRIMARY KEY(Id_Sauv),
@@ -103,7 +103,7 @@ CREATE TABLE SAUVETEUR(
 
 CREATE TABLE INCIDENT(
    Id_Incident INT AUTO_INCREMENT,
-   Date_Incident DATETIME NOT NULL,
+   Date_Incident VARCHAR(25) NOT NULL,
    Localisation_Incident VARCHAR(50) NOT NULL,
    Desc_Incident VARCHAR(5000),
    Id_User INT NOT NULL,
@@ -138,7 +138,7 @@ CREATE TABLE ARTICLE(
    Id_Article INT AUTO_INCREMENT,
    Contenu_Article VARCHAR(50) NOT NULL,
    Desc_Article VARCHAR(50) NOT NULL,
-   Date_Article DATETIME NOT NULL,
+   Date_Article VARCHAR(25) NOT NULL,
    Id_Categorie INT NOT NULL,
    Id_User INT NOT NULL,
    PRIMARY KEY(Id_Article),
