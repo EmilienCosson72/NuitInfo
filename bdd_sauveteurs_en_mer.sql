@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS nuitdelinfo;
-CREATE DATABASE nuitdelinfo;
-USE nuitdelinfo;
+DROP DATABASE IF EXISTS generationterrible_ndi;
+CREATE DATABASE generationterrible_ndi;
+USE generationterrible_ndi;
 
 CREATE TABLE UTILISATEUR(
    Id_User INT AUTO_INCREMENT,
