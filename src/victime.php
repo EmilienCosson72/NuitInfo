@@ -5,7 +5,7 @@
 
         if($id > 0){
             // Connection PDO
-            $dbh = new PDO('mysql:host=mysql-generationterrible.alwaysdata.net;dbname=generationterrible_ndi', '251169_gt', 'NuitDeLInfo', array(
+            $dbh = new PDO('mysql:host=mysql-generationterrible.alwaysdata.net;dbname=generationterrible_ndi', '251169_gt', '${{ secrets.SuperSecret }}', array(
                 PDO::ATTR_PERSISTENT => true
             ));
 
